@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="stylesheet" href="dist/styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Order summary card</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="dist/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Order summary card</title>
+  </head>
+  <body class="bg-neutral-pale bg-pattern-mobile md:bg-pattern-desktop bg-no-repeat bg-contain">
+    <div class="h-screen w-full flex flex-col justify-center items-center px-6">
+      <div class="max-w-sm bg-neutral-pale rounded-xl overflow-hidden shadow-neutraldark">
+        <img src="./images/illustration-hero.svg" alt="Illustrationo of person dancing while listening to music">
+        <div class="flex flex-col text-center px-6 py-4 pt-8 space-y-4">
+          <h1 class="font-bold text-xl">Order Summary</h1>
+          <p class="max-w-xs text-sm text-neutral-soft">
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+          <div class="bg-primary-pale bg-opacity-30 rounded-lg flex items-center px-4 py-4">
+            <img src="./images/icon-music.svg" alt="Music Icon" class="pr-4">
+            <div class="text-left">
+              <p class="font-bold">Annual Plan</p>
+              <p class="text-sm text-gray-400">$59.99/year</p>
+            </div>
+            <a href="#" class="text-primary-bright underline ml-auto text-sm">Change</a>
+          </div>
+          
+          <button class="bg-primary-bright text-gray-50 font-bold py-3 rounded-lg shadow-primarybright">Proceed to Payment</button>
+          <button class="py-3 text-neutral-dark  font-bold">Cancel Order</button>
+        </div>
+      </div>
+    </div>
 
-  Order Summary
-
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer class="bg-neutral-dark bg-opacity-10 fixed bottom-0 w-full py-2">
+      <div class="text-xs text-center">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          class="text-primary-bright"
+          >Frontend Mentor</a
+        >. Coded by <a href="#" class="text-primary-bright">Justin M Morgan</a>.
+      </div>
+    </footer>
+  </body>
 </html>
