@@ -1,91 +1,97 @@
-# Frontend Mentor - Order summary card
+# Frontend Mentor - Order summary card solution
 
-![Design preview for the Order summary card coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Order summary card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-## The challenge
+## Overview
 
-Your challenge is to build out this order summary card component and get it looking as close to the design as possible.
+### The challenge
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+Implement the design from the provided images.
 
-Your users should be able to:
+### Screenshots
 
-- See hover states for interactive elements
+![](./images/screenshot_mobile.png)
+![](./images/screenshot_desktop.png)
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Links
 
-## Where to find everything
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Github Pages](https://justin-m-morgan.github.io/fem_order-summary-component/)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## My process
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+With this challenge, I decided to go with a static HTML file for the content and TailwindCSS for the styling. My intention was to focus on getting my first Frontend Mentor project complete quickly using tools I was already familiar with. 
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+My first step in completing this project was establishing the requirements in to the projet configuration file (here `tailwind.config.js`). This included establishing the project color palatte, the urls of the provided images, and including the required font.
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+I worked in layers from back to front. First I created a background layer that resized to fit the available window space (without fixing a height or leaving a gap on taller screens). This included sizing the provided background SVGs appropriately. The next layer was the "card", which has the appearance of floating in the center of the screen. 
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+Next I established the markup for the provided content. This involved implementing a heirarhy, grouping items both logically and for styling purposes, and choosing semantic elements (such as buttons vs links, and a definition list). Then I planned a layout which would minimize superfluous elements (used only for layout purposes). 
 
-## Building your project
+Lastly was polish. This included assigning the correct colors, shadows, font weights/styles, and controlling element widths to match the style provided in the design images.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Built with
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- Semantic HTML5 markup
+- Flexbox
+- Mobile-first workflow
+- [TailwindCSS](https://tailwindcss.com/)
 
-## Deploying your project
+TailwindCSS is a utility-class based CSS library. It offers a CLI for live-reloading and additional tooling without requiring an additional build tool. Making use of Tailwind requires a thorough understanding of CSS, as the utilities provide normalization with little abstraction. Normalization occurs in several ways:
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+- implementing a PostCSS build-pipeline to provide fixes, resets, vendor-prefixes, and others benefiets
+- resetting many frustrating default stylings, such as link styles, list styles, margin/padding, etc with the `Preflight` base styles
+- providing a fixed set of spacing, sizing, and color classes, encouraging project-wide consistency
+### What I learned
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+From this project, I improved my ability to simplify markup. For example, in the "Annual Plan" section, I noticed that the design required several contrary alignment requirements. The icon and two items of text appeared to be left aligned while the "Change" link needed to be right aligned. Unfortunately, the `justify-self` property (available when using CSS-grids) is [not a supported property for flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_in_Flexbox) and so the individual item's justification could not be overridden with flexbox. Rather than switching to a grid (for such a simple layout) or nesting `flex` containers, I decided to solve the problem by remembering a trick learned from Kevin Powell's Youtube channel regarding the use of margins. 
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+```html
+ <div
+  class="
+    bg-primary-pale bg-opacity-30
+    rounded-lg
+    flex
+    items-center
+    px-4
+    py-4
+  "
+>
+  <img src="./images/icon-music.svg" alt="Music Icon" class="pr-4" />
+  <dl class="text-left">
+    <dt class="font-bold">Annual Plan</dt>
+    <dd class="text-sm text-gray-400">$59.99/year</dd>
+  </dl>
+  <a href="#" class="text-primary-bright underline ml-auto text-sm">Change</a>
+</div>
+```
 
-## Create a custom `README.md`
+By using `margin-left: auto (.ml-auto)`, the link element absorbs the available space between it and the right edge of the flex container and assigns it to it's own left margin (effectively aligning it to the right margin). Taking this approach, I was able to avoid one unneccessary `div`.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+### Continued development
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+In future projects, I want to demonstrate my ability to accomplish the same tasks without relying on the few abstractions provided by TailwindCSS. This includes using (raw) media queries effectively. Tailwind allows for the "tagging" of design properties with screen sizes, which effectively handles media queries and encourages a mobile first approach to design (as the responsive classes are implemented as `min-width`s).
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+## Author
 
-## Submitting your solution
+- Github Profile - [Justin M Morgan](https://github.com/justin-m-morgan)
+- Frontend Mentor - [@justin-m-morgan](https://www.frontendmentor.io/profile/justin-m-morgan)
+- Twitter - [@_catsonfilm](https://www.twitter.com/_catsonfilm)
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
 
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀

@@ -20,28 +20,69 @@
 
     <title>Frontend Mentor | Order summary card</title>
   </head>
-  <body class="bg-neutral-pale bg-pattern-mobile md:bg-pattern-desktop bg-no-repeat bg-contain">
-    <div class="h-screen w-full flex flex-col justify-center items-center px-6">
-      <div class="max-w-sm bg-neutral-pale rounded-xl overflow-hidden shadow-neutraldark">
-        <img src="./images/illustration-hero.svg" alt="Illustrationo of person dancing while listening to music">
-        <div class="flex flex-col text-center px-6 py-4 pt-8 space-y-4">
-          <h1 class="font-bold text-xl">Order Summary</h1>
-          <p class="max-w-xs text-sm text-neutral-soft">
-            You can now listen to millions of songs, audiobooks, and podcasts on
-            any device anywhere you like!
-          </p>
-          <div class="bg-primary-pale bg-opacity-30 rounded-lg flex items-center px-4 py-4">
-            <img src="./images/icon-music.svg" alt="Music Icon" class="pr-4">
-            <div class="text-left">
-              <p class="font-bold">Annual Plan</p>
-              <p class="text-sm text-gray-400">$59.99/year</p>
-            </div>
-            <a href="#" class="text-primary-bright underline ml-auto text-sm">Change</a>
-          </div>
-          
-          <button class="bg-primary-bright text-gray-50 font-bold py-3 rounded-lg shadow-primarybright">Proceed to Payment</button>
-          <button class="py-3 text-neutral-dark  font-bold">Cancel Order</button>
+  <body
+    class="
+      bg-neutral-pale bg-pattern-mobile
+      md:bg-pattern-desktop
+      bg-no-repeat bg-contain
+      h-screen
+      w-full
+      flex flex-col
+      justify-center
+      items-center
+      px-6
+    "
+  >
+    <div
+      class="
+        max-w-sm
+        bg-neutral-pale
+        rounded-xl
+        overflow-hidden
+        shadow-neutraldark
+      "
+    >
+      <img
+        src="./images/illustration-hero.svg"
+        alt="Illustrationo of person dancing while listening to music"
+      />
+      <div class="flex flex-col text-center px-6 py-4 pt-8 space-y-4">
+        <h1 class="font-bold text-xl">Order Summary</h1>
+        <p class="max-w-xs text-sm text-neutral-soft">
+          You can now listen to millions of songs, audiobooks, and podcasts on
+          any device anywhere you like!
+        </p>
+        <div
+          class="
+            bg-primary-pale bg-opacity-30
+            rounded-lg
+            flex
+            items-center
+            px-4
+            py-4
+          "
+        >
+          <img src="./images/icon-music.svg" alt="Music Icon" class="pr-4" />
+          <dl class="text-left">
+            <dt class="font-bold">Annual Plan</dt>
+            <dd class="text-sm text-gray-400">$59.99/year</dd>
+          </dl>
+          <a href="#" class="text-primary-bright underline ml-auto text-sm">Change</a>
         </div>
+
+        <button
+          class="
+            bg-primary-bright
+            text-gray-50
+            font-bold
+            py-3
+            rounded-lg
+            shadow-primarybright
+          "
+        >
+          Proceed to Payment
+        </button>
+        <button class="py-3 text-neutral-dark font-bold">Cancel Order</button>
       </div>
     </div>
 
